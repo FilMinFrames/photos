@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="photos/pfp_circle.png">
+    <title>Sunny Wings</title>
+</head>
+<body>
+    <div class="main">
+        <div class="contain-img">
+            <div><a class="img2" href="Nature_Gallery.html"><img src="photos/arrow_white.png"></a></div>
+            <div class="contain-NameFirst">
+                <h3>Sunny Wings</h3>
+            </div>
+            <img class="img1" src="img/green_wing.jpg">
+        </div>
+        <div class="contain-info">
+            <div><a class="img3" href="Nature_Gallery.html"><img src="photos/arrow_white.png"></a></div>
+                <div class="contain-SmallInfo">
+                    <div class="contain-NameSecond">
+                        <h3>Sunny Wings</h3>
+                    </div>
+                    <div class="contain-date">
+                        <h3 id="date"></h3>
+                    </div>
+                    <div class="contain-PlaceFirst">
+                        <h3>📍 Považská Bystrica</h3>
+                    </div>
+                </div> 
+                <div class="contain-gear">
+                    <h3 id="gear"></h3>
+                    <div class="contain-GearText">
+                        <p class="contain-GearText-left">
+                            📷<br>
+                            🔭<br>
+                        </p>
+                        <p class="contain-GearText-right">
+                            Canon M6 Mark II<br>
+                            Canon 100-400 L II<br>
+                        </p>
+                    </div>
+                </div>
+                <div class="contain-PlaceSecond">
+                    <h3>📍 Považská Bystrica</h3>
+                </div>
+                <div class="contain-settings">
+                    <h3 id="settings"></h3>
+                    <div class=".contain-GearText">
+                        <p class="contain-GearText-left">
+                            ⚪<br>
+                            ⏱️<br>
+                            🔘<br>
+                        </p>
+                        <p class="contain-GearText-right">
+                            Iso 640<br>
+                            Sh. 1/1600<br>
+                            f/5.6<br>
+                        </p>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <style>
+        p{
+            line-height: 1.5;
+        }
+        @font-face {
+            font-family: "MainTxt";
+            src: url(fonts/averialight.ttf);
+        }
+        @font-face {
+            font-family: "Shadows";
+            src: url(fonts/shadows.ttf);
+        }
+        * {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+            
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: url(blur/green_wing.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .main{
+            display: flex;        
+        }
+        .img1 {
+            width: 67rem;
+            height: 100%;
+            border-radius: 25px 0px 0px 25px;
+        }
+        .img2 img, .img3 img{
+            width: 3.5rem;
+            display: flex;
+            float: right;
+            border-bottom: 2.5px solid rgb(212, 212, 212);
+            padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+            border-radius: 20px 0px 0px 0px;
+            transition: transform 0.15s;
+        }
+        .contain-img{
+            display: flex;
+            flex-direction: column;
+        }
+        .contain-info{
+            border-left: 2.5px solid rgb(212, 212, 212);
+            float: right;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .contain-NameSecond, .contain-NameFirst{
+            width: 18rem;
+            height: 8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2.5px solid rgb(212, 212, 212);
+            border-radius: 0px 20px 0px 0px;
+            font-family: "Shadows";
+            font-size: 2.3rem;
+            color: white;
+        }
+        .contain-date, .contain-PlaceSecond, .contain-PlaceFirst{
+            width: 18rem;
+            height: 4.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2.5px solid rgb(212, 212, 212);
+        }
+        .contain-PlaceFirst{
+            display: none;
+        }
+        .contain-PlaceSecond, .contain-PlaceFirst{
+            border-top: 2.5px solid rgb(212, 212, 212);
+        }
+        .contain-date h3, .contain-PlaceSecond h3, .contain-PlaceFirst h3{
+            color: white;
+            font-size: 1.3rem;
+            font-family: "MainTxt";
+            text-align: center;
+        }
+        span{
+            display: inline;
+        }
+        .contain-gear,.contain-settings{
+            width: 18rem;
+            height: 16rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .contain-GearText{
+            display: flex;
+            flex-direction: row;
+            gap: 0.75rem;
+        }
+        .contain-GearText-left{
+            display: inline-flex;
+            text-align: left;
+        }
+        .contain-GearText-right{
+            display: inline-flex;
+            text-align: center;
+        }
+
+        .contain-settings{
+            border-radius: 0px 0px 25px 0px;
+        }
+        .contain-gear h3, .contain-settings h3, .contain-gear p, .contain-settings p{
+            color: white;
+            font-size: 1.25rem;
+            font-family: "MainTxt";
+        }
+        .contain-gear h3, .contain-settings h3{
+            font-size: 1.3rem;
+        }
+        .img2 img, .img3 img, .contain-NameSecond, .contain-NameFirst, .contain-date, .contain-PlaceSecond, .contain-PlaceFirst, .contain-gear,.contain-settings{
+            background-color: black;
+        }
+        .img3,.contain-NameFirst{
+            display: none;
+        }
+        @media (max-width: 1450px) {
+            html{
+                font-size: 80%;
+            }
+            .img2 img{
+                padding: 0.6rem 0.4rem 0.5rem 0.6rem;
+            }
+        }
+
+        @media (max-width: 1130px){
+            .main{
+                flex-direction: column;
+            }
+            .contain-info{
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                border: none;
+            }
+            .contain-SmallInfo{
+                display: flex;
+                flex-direction: column-reverse;
+                border-right: 2px solid rgb(212, 212, 212);
+            }
+            .contain-date, .contain-PlaceSecond, .contain-PlaceFirst{
+                width: 18rem;
+                height: 4.5rem;
+                border: none;
+                flex-direction: column;
+            }
+            .contain-date{
+                border-left:  0;
+                border-bottom: 2px solid rgb(212, 212, 212);
+                border-radius: 0;
+            }
+            .contain-PlaceSecond{
+                border-left:  2px solid transparent;
+                border-right: 2px solid rgb(212, 212, 212);
+                border-radius: 0;
+                display: none;
+            }
+            .contain-PlaceFirst{
+                display: flex;
+                border-bottom: 2px solid rgb(212, 212, 212);
+                border-radius: 0;
+            }
+            .contain-NameSecond, .contain-NameFirst{
+                border-radius: 0;
+                border-bottom: 0;
+                height: 8rem;
+                border-radius: 0px 0px 0px 25px;
+            }
+            .contain-date h3, .contain-PlaceSecond h3{
+                font-size: 1.2rem;
+            }
+            .contain-gear{
+                border-right: 2px solid rgb(212, 212, 212);
+                border-radius: 0;
+            }
+            .contain-gear, .contain-settings{
+                height: 17.325rem;
+            }
+            .contain-settings{
+                border: none;
+            }
+            .img1{
+                border-radius: 25px 25px 0px 25px;
+            }
+            .img2{
+                display: none;
+            }
+            .img3{
+                display: flex;
+                border-right: 2px solid rgb(212, 212, 212);
+            }
+            .img3 img{
+                height: 4rem;
+                margin-left: 4.5rem;
+                padding: 0.3rem 0.5rem 0.35rem 0.5rem;
+                border: none;
+                border-radius: 0px 0px 0px 20px;
+            }
+        }
+        @media (max-width:950px){
+            body{
+                height: 100%;
+            }
+            .main{
+                margin-top: 4rem
+            }
+            .contain-img{
+                align-items: center;
+            }
+            .img1{
+                width: 55rem;
+                border-radius: 25px 25px 25px 25px;
+                margin-top: 2.5rem;
+            }
+            .img2 img{
+                width: 5rem;
+                margin:0;
+                border: 2px solid rgb(212, 212, 212);
+                border-radius: 25px 25px 25px 25px;
+            }
+            .img2{
+                order: 4;
+                margin-top: 2.5rem;
+                display: block;
+            }
+            .img3{
+                display: none;
+            }
+            .contain-info{
+                flex-direction: column;
+                align-items: center;
+            }
+            .contain-SmallInfo{
+                border: none;
+            }
+            .contain-gear,.contain-settings{
+                display: flex;
+                flex-direction: column;
+                width: 25rem;
+                height: 18rem;
+                border-radius: 25px;
+                border: 2px solid rgb(212, 212, 212);
+                margin-top: 2.5rem;
+                padding-top: 0;
+                justify-content: center;
+            }
+            .contain-gear h3,.contain-settings h3{
+                padding-top: 0;
+            }
+            .contain-settings{
+                margin-bottom: 2.5rem;
+            }
+            .contain-date, .contain-PlaceSecond{
+                width: 25rem;
+                height: 5rem;
+                border-radius: 25px;
+                border: 2px solid rgb(212, 212, 212);
+                margin-top: 2.5rem;
+            }
+            .contain-PlaceSecond,.contain-NameFirst{
+                display: flex;
+            }
+            .contain-PlaceFirst,.contain-NameSecond{
+                display: none;
+            }
+            .contain-NameFirst{
+                width: 25rem;
+                height: 7rem;
+                border-radius: 25px;
+                border: 2px solid rgb(212, 212, 212);
+                margin-top: 2.5rem;
+            }
+            .contain-date h3, .contain-PlaceSecond h3, .contain-PlaceFirst h3{
+                color: white;
+                font-size: 1.7rem;
+                font-family: "MainTxt";
+                text-align: center;
+            }
+            .contain-gear h3, .contain-settings h3, .contain-gear p, .contain-settings p{
+                color: white;
+                font-size: 1.7rem;
+                font-family: "MainTxt";
+            }
+            .contain-gear p, .contain-settings p{
+                margin-top: 0;
+            }
+            .img2 img:hover, .img3 img:hover{
+                transform: scale(1.12)
+            }
+            .contain-NameSecond, .contain-NameFirst{
+                font-size: 2.5rem;
+            }
+        }
+        @media (max-width:735px){
+            html{
+                font-size: 75%;
+            }
+            .img1{
+                width: 40rem;
+            }
+        }
+        @media (max-width:505px){
+            html{
+                font-size: 65%;
+            }
+        }
+        @media (max-width:440px){
+            html{
+                font-size: 55%;
+            }
+        }
+        @media (max-width:370px){
+            html{
+                font-size: 50%;
+            }
+            .img2 img{
+                border-radius: 18px 18px 18px 18px;
+            }
+        }
+        @media (max-width:337px){
+            html{
+                font-size: 45%;
+            }
+        }
+        @media (max-width:303px){
+            html{
+                font-size: 40%;   
+            }
+            .img2 img{
+                border-radius: 15px 15px 15px 15px;
+            }
+        }
+        @media (max-width:270px){
+            html{
+                font-size: 35%;
+            }
+            .img2 img{
+                border-radius: 13px 13px 13px 13px;
+            }
+        }
+        @media (max-width:235px){
+            html{
+                font-size: 30%;
+            }
+            .img2 img{
+                border-radius: 11px 11px 11px 11px;
+            }
+        }
+    </style>
+    <script>
+        var date_en = "📅 June 2025";
+        var date_sk = "📅 Jún 2025";
+        var gear_en = "Used Gear:";
+        var gear_sk = "Použitá výbava:";
+        var settings_en = "Camera Settings:";
+        var settings_sk = "Nastavenia foťáku:";
+        function translateText() {
+            var text_date = document.getElementById("date");
+            var text_gear = document.getElementById("gear");
+            var text_settings = document.getElementById("settings");
+            var language = localStorage.getItem('language') || 'en';
+    
+            if (language === 'en') {
+                text_date.textContent = date_en;
+                text_gear.textContent = gear_en;
+                text_settings.textContent = settings_en;
+            } else {
+                text_date.textContent = date_sk;
+                text_gear.textContent = gear_sk;
+                text_settings.textContent = settings_sk;
+            }
+        }
+    
+        window.onload = function() {
+            translateText();
+        };
+    
+        function changeLanguage() {
+            var language = (localStorage.getItem('language') === 'en') ? 'sk' : 'en';
+                localStorage.setItem('language', language);
+                translateText();
+            }
+    </script>
+</body>
+</html>
