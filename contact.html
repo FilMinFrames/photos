@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilMin Frames</title>
+    <link rel="icon" type="image/x-icon" href="photos/pfp_circle.png">
+</head>
+<body>
+    <header>
+        <div id = "pfpdiv"><a href="index.html"><img class="pfp" src="photos/pfp.jpg" alt="Profilova_fotka" title="Home Page"></a></div>
+        <ul class="left">
+            <li id="gal"><a href="Nature_Gallery.html" id="gal2">Gallery</a></li>
+            <li id="ab"><a href="about.html" id="ab2">About me</a></li>
+            <li id="con"><a href="contact.html" id="con2">Contact</a></li>
+        </ul>
+        <ul class="right">
+            <li><a href="https://www.instagram.com/fil_min/"><img id="ig" src="photos/ig_logo.png" alt="Instagram" title="Instagram Link"></a></li>
+            <li><a href="mailto:filminphotography@gmail.com"><img id="mail" src="photos/mail.png" alt="Mail" title="Mail Link"></a></li>
+            <li><a href="https://vsco.co/filminframes/gallery"><img id="vsco" src="photos/vsco.png" alt="VSCO" title="VSCO Link"></a></li>
+        </ul>
+        <img id="textchng" src="photos/svk.png" onclick="changeLanguage()" title="EN <-> SK">
+    </header>
+    <div class="darkm" id="darkm"></div>
+    <div class="blackm" id="blackm"></div>
+    <div class="contain">
+        <h2 id="intro">Get In Touch With Me</h2>
+        <img src="photos/camera.jpg">
+    </div>
+    <div class="contact">
+        <div class="contact2">
+            <p id="bye">I'm thrilled that you're considering reaching out. Whether you have questions about my photography services,<br> 
+            want to discuss a potential collaboration, or simply want to say hello, I'm here for you.<br> 
+            <br> 
+            Feel free to contact me through an email or connect through social media.<br> 
+            <br>  
+            Thank you for your visit.</p>
+            <p id="bye2">Best regards,<br>
+            Filip</p>
+        </div>
+        <div class="watermark">
+            <img id="watermark_img" src="photos/w.png">
+        </div>
+    </div>
+    <div id="icon">
+        <img id="image" src="photos/info.png">
+    </div>
+    <div id="icon2">
+        <img id="image2" src="Photos/dark.png">
+    </div>
+    <footer id="info">
+        <p id="rules">© If you wish to use any of the images on this website, please contact me for permission. Any unauthorised use isn't allowed.</p>
+    </footer>    
+    <style>
+@font-face {
+    font-family: "MainTxt";
+    src: url(fonts/averialight.ttf);
+}
+@font-face {
+    font-family: "Shadows";
+    src: url(fonts/shadows.ttf);
+}
+*{
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-color 0.7s ease, background-image 0.7s ease;
+}
+.darkm, .blackm{
+    opacity: 0;
+    position: fixed;    
+    top: 0;
+    left: 0;
+    width: 100%;          
+    height: 100%; 
+    transition: opacity 0.7s ease;
+    z-index: -5;
+}
+.darkm{
+    background-color: #303030;
+}
+.blackm{
+    background-color: #000;
+}
+li{
+    font-family: "MainTxt";
+    display: inline;
+}
+.pfp{
+    width: 6.25rem;
+    margin: 2.5rem 2.5rem 0 5rem;
+    border-radius: 25px;
+    float: left;
+    transition: transform 0.15s;
+}
+.pfp:hover{
+    transform: scale(1.05);
+}
+.left{
+    float: left;
+    list-style: none;
+    text-align: left;
+    text-decoration: none;
+    margin-top: 4.7rem;
+}
+#gal,#ab,#con{
+    font-size: 1.25rem;
+    vertical-align: middle;
+    color:rgb(80, 80, 80);
+}
+#ab,#con{
+    margin-left: 2.5rem;
+}
+.left li {
+    font-family: "MainTxt";
+    display: inline;
+    transition: transform 0.15s;
+}
+.left li a{
+    font-family: "MainTxt";
+    text-decoration: none;
+    color: rgb(80, 80, 80);
+    display: inline-block; 
+    transition: transform 0.15s;
+}
+.left li a:visited,.left li a:link{
+    color:rgb(80, 80, 80);
+}
+.right{
+    float: right;
+    margin-top: 4.4rem;
+    padding-right: 5rem;
+}
+#ig, #mail, #vsco{
+    width: 2.5rem;
+    transition: transform 0.15s;
+}
+#mail, #vsco{
+    margin-left: 2rem;
+}
+#ig:hover, #mail:hover, #vsco:hover{
+    transform: scale(1.15);
+}
+.left li a:hover, .left li:hover {
+    transform: scale(1.1);
+    color: rgb(50, 50, 50);
+}
+#textchng:hover{
+    transform: scale(1.12);
+}
+#textchng{
+    height: 2.2rem;
+    border-radius: 6px;
+    margin: 4.5rem 1rem 0 0;
+    float: right;
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+.contain,.contact {
+    white-space: nowrap;
+    text-align: center;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-top: 14rem;
+    left: 50%;
+    transform: translate(-50%);
+}
+.contact{
+    margin-top: 72rem;
+}
+h2{
+    font-family: "Shadows";
+    font-size: 2.2rem;
+    color:dimgray;
+}
+.contain img{
+    width: 75rem;
+    border-radius: 20px;
+}
+.contact2 p{
+    font-family: "MainTxt";
+    text-align: center;
+    padding: 0.6rem;
+    font-size: 1.25rem;
+    color:dimgray;
+}
+#info {
+    color: #fff;
+    text-align: center;
+    padding: 0.35rem;
+    display: block;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    
+}
+#icon,#icon2 {
+    cursor: pointer;
+    position: fixed;
+    bottom: 0.1rem;
+    transition: transform 0.15s;
+}
+#icon{
+    right: 0.6rem;
+    z-index: 2;
+}
+#icon2 {
+    left: 0.6rem;
+}
+#icon img,#icon2 img{
+    width: 3rem;
+}
+#icon:hover, #icon2:hover{
+    transform: scale(1.08);
+}
+.watermark{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 5rem 0;
+}
+.watermark img{
+    width: 22rem;
+}
+@media (max-width: 1600px) {
+    .contain img{
+        width: 65rem;
+    }
+    .contact{
+        margin-top: 65rem;
+    }
+}
+@media (max-width: 1380px) {
+    .watermark img{
+        width: 18rem;
+    }
+}
+@media (max-width: 1300px) {
+    .contain img{
+        width: 60rem;
+    }
+    .contact{
+        margin-top: 60rem;
+    }
+    .pfp{
+        margin: 2.5rem 0 0 5rem;
+    }
+}
+@media (max-width: 1150px) {
+    .contain img{
+        width: 55rem;
+    }
+    .contact2{
+        white-space:normal;
+    }
+}
+@media (max-width: 950px) {
+    .left, .right, .pfp {
+        float: none;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+    }
+    .left{
+        padding: 1rem 0 1rem 0;
+    }
+    .left, .right{
+        margin: 0 auto; 
+    }
+    .right, .pfp {
+        padding: 1rem;
+    }
+    #pfpdiv{
+        display: flex;
+        justify-content: center;
+    }
+    #textchng{
+        float: none;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        margin-top: 1rem;
+    }
+    .left li {
+        text-align: center;
+        padding: 0.2rem 0.8rem 0.2rem 0.8rem;
+        border: 1px solid grey;
+        border-radius: 10px;
+    }
+    #ab,#con{
+        margin-left: 0.5rem;
+    }
+    .pfp{
+        margin: 1rem 0.5rem 0 0;
+        border-radius: 40px;
+    }
+    h2{
+        font-size: 2rem;
+    }
+    #con{
+        margin-right: 0;
+    }
+    #mail, #vsco{
+        margin-left: 4rem;
+    }
+    .contain{
+        margin-top: 2.5rem;
+    }
+    .contain img{
+        width: 50rem;
+    }
+    .contact{
+        margin-top: 43rem;
+    }
+    #info p{
+        word-wrap: break-word;
+        max-width: calc(100% - 5rem);
+        margin-left: 1rem;
+    }
+    .left li:hover {
+        transform: scale(1.07);
+        color: rgb(50, 50, 50);
+    }
+}
+@media (max-width:835px){
+    #icon,#icon2 {
+        bottom: 0.7rem;
+    }
+}
+@media (max-width: 870px) {
+    .contain img{
+        width: 43rem;
+    }
+    .contact{
+        margin-top: 38rem;
+    }
+    h2{
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 750px) {
+    h2{
+        margin-bottom: 1rem;
+    }
+    .contain img{
+        width: 35rem;
+    }
+    .contact{
+        margin-top: 32rem;
+    }
+}
+@media (max-width: 610px) {
+    .contain img{
+        width: 28rem;
+    }
+    .contact{
+        margin-top: 28rem;
+    }
+    #ig,#mail,#vsco{
+        width: 2.2rem;
+    }
+    .left li {
+        padding: 0.2rem 0.75rem 0.2rem 0.75rem;
+        font-size: 1.1rem;
+    }
+    .pfp{
+        width: 5.75rem;
+    }
+}
+@media (max-width: 535px) {
+    .watermark img{
+        width: 15rem;
+    }
+}
+@media (max-width: 500px) {
+    .contain img{
+        width: 20rem;
+    }
+    .contact{
+        margin-top: 21rem;
+    }
+    .contact2 p{
+        font-size: 1rem;
+    }
+}
+@media (max-width: 482px) {
+    #icon,#icon2 {
+        bottom: 1.2rem;
+    }
+}
+@media (max-width: 353px) {
+    html{
+        font-size: 90%;
+    }
+}
+@media (max-width: 317px) {
+    html{
+        font-size: 80%;
+    }
+}
+@media (max-width: 283px) {
+    html{
+        font-size: 70%;
+    }
+}
+</style>
+<script>
+var mode;
+document.addEventListener("DOMContentLoaded", function() {
+
+    var icon = document.getElementById('icon');
+    var info = document.getElementById('info');
+    var image = document.getElementById('image');
+
+    window.onload = applyColors;
+    window.onload = resetBorder;
+    window.onload = applyBorder;
+    window.onload = checkWidth;
+    window.onload = translateText;
+    window.onload = changeLanguage;
+    window.onload = infoClick;
+    
+    function infoClick() {
+        if (info.style.opacity === '0') {
+            info.style.opacity = '1';
+            info.style.transform = 'translateY(0)'; 
+            info.style.backgroundColor = '#606060'; 
+            image.src = 'photos/infosmall.png'; 
+        } else {
+            info.style.opacity = '0';
+            info.style.transform = 'translateY(100%)'; 
+            if (mode === 'black') {
+                image.src = 'photos/info_dark.png';
+            } else {
+                image.src = 'photos/info.png';
+            }
+        }
+    }
+
+    image.addEventListener('click', function (event) {
+        infoClick();
+    });
+
+
+    var body = document.body;
+    var icon2 = document.getElementById('icon2');
+    var image2 = document.getElementById('image2');
+    var elements = document.querySelectorAll('h2,.contact2 p,h1,a');
+    var wm = document.getElementById('watermark_img');  
+    var ig = document.getElementById('ig');
+    var mail = document.getElementById('mail');
+    var vsco = document.getElementById('vsco');
+    var lang_icon = document.getElementById("textchng");
+    var bord = document.querySelectorAll('.left li a'); 
+    var language = localStorage.getItem('language') || 'en';
+    var mode = localStorage.getItem('colorMode')|| 'light';
+    const dark = document.getElementById('darkm');
+    const black = document.getElementById('blackm');
+
+    function applyColors() {
+        switch(mode) {
+
+            case 'light':
+                dark.style.opacity = '0';
+                black.style.opacity = '0';
+                body.style.backgroundImage = "url(photos/img.jpg)";
+                elements.forEach(function(item) {
+                    item.style.color = '#303030';
+                });
+                image2.src = 'photos/dark.png';
+                image.src = 'photos/info.png'; 
+                wm.src = 'photos/w.png';
+                ig.src = 'photos/ig_logo.png';
+                mail.src = 'photos/mail.png';
+                vsco.src = 'photos/vsco.png';
+                if (language === 'en'){
+                        lang_icon.src =  'photos/svk.png';
+                    } else{
+                        lang_icon.src = 'photos/gb.png';
+                    }
+                break;
+
+            case 'dark':
+                dark.style.opacity = '1';
+                black.style.opacity = '0';
+                body.style.backgroundImage = "";
+                elements.forEach(function(item) {
+                    item.style.color = 'white';
+                });
+                image2.src = 'photos/hide.png';
+                image.src = 'photos/info.png';
+                wm.src = 'photos/ww.png';
+                ig.src = 'photos/ig_logo_white.png';
+                mail.src = 'photos/mail_white.png';
+                vsco.src = 'photos/vsco_white.png';
+                if (language === 'en'){
+                        lang_icon.src =  'photos/svk_white.png';
+                    } else{
+                        lang_icon.src = 'photos/gb_white.png';
+                    }
+                break;
+
+            case 'black':
+                dark.style.opacity = '1';
+                black.style.opacity = '1';
+                body.style.backgroundImage = "";
+                elements.forEach(function(item) {
+                    item.style.color = 'white';
+                });
+                image2.src = 'photos/light.png';
+                image.src = 'photos/info_dark.png';  
+                wm.src = 'photos/ww.png';
+                ig.src = 'photos/ig_logo_white.png';
+                mail.src = 'photos/mail_white.png';
+                vsco.src = 'photos/vsco_white.png';
+                if (language === 'en'){
+                        lang_icon.src =  'photos/svk_white.png';
+                    } else{
+                        lang_icon.src = 'photos/gb_white.png';
+                    }
+                break;
+        };
+    };
+
+    icon2.addEventListener('click', function() {
+        mode = (mode === 'light') ? 'dark' : (mode === 'dark') ? 'black' : 'light';
+        applyColors();
+        localStorage.setItem('colorMode', mode);
+    });
+
+    function resetBorder() {
+        bord.forEach(function(item) {
+            item.style.border = 'none';
+            item.style.fontWeight = 'normal';
+        });
+    }
+
+    function applyBorder() {
+        bord.forEach(function(item) {
+            if (mode !== 'white') {
+                item.parentElement.style.border = '1px solid gray';
+                item.parentElement.style.fontWeight = 'normal';
+            } else {
+                item.parentElement.style.border = '1px solid white';
+                item.parentElement.style.fontWeight = 'bold';
+            }
+        });
+    };    
+    function checkWidth() {
+        if (window.innerWidth < 950) {
+            applyBorder();
+        } else {
+            resetBorder();
+        }
+    };
+
+    applyColors(mode);
+    checkWidth();
+    translateText();
+});
+    var gal_en = "Gallery";
+    var gal_sk = "Galéria";
+    var ab_en = "About me";
+    var ab_sk = "O mne";
+    var con_en = "Contact";
+    var con_sk = "Kontakt";
+    var intro_en = "Get In Touch With Me";
+    var intro_sk = "Kontaktujte ma";
+    var bye_en = `
+                I'm thrilled that you're considering reaching out. Whether you have questions about my photography services,<br> 
+                want to discuss a potential collaboration, or simply want to say hello, I'm here for you.<br> 
+                <br> 
+                Feel free to contact me through an email or connect through social media.<br> 
+                <br>  
+                Thank you for your visit.
+                `;
+    var bye_sk =`
+                Som nadšený, že uvažujete o kontakte. Či máte otázky ohľadom mojich fotografických služieb,<br> 
+                chcete diskutovať o potenciálnej spolupráci, alebo jednoducho chcete pozdraviť, som tu pre vás.<br> 
+                <br> 
+                Nebojte sa ma kontaktovať prostredníctvom e-mailu alebo sa pripojiť cez sociálne médiá.<br> 
+                <br>  
+                Ďakujem za vašu návštevu.
+                `;
+    var bye2_en = "Best regards,<br>Filip";
+    var bye2_sk = "S pozdravom,<br>Filip";
+    var rules_en = "© If you wish to use any of the images on this website, contact me for permission. Any unauthorised use isn't allowed";
+    var rules_sk = "© Ak chcete použiť niektorý z obrázkov na tejto webovej stránke, kontaktujte ma o povolenie. Akékoľvek neoprávnené použitie nie je povolené";
+
+    function translateText() {
+        var text_gal = document.getElementById("gal2");
+        var text_ab = document.getElementById("ab2");
+        var text_con = document.getElementById("con2");
+        var text_intro = document.getElementById("intro");
+        var text_rules = document.getElementById("rules");
+        var text_bye = document.getElementById("bye");
+        var text_bye2 = document.getElementById("bye2");
+        var lang_icon = document.getElementById("textchng")
+        var mode = localStorage.getItem('colorMode') || 'light';
+        var language = localStorage.getItem('language') || 'en';
+
+        if (language === 'en') {
+            text_gal.textContent = gal_en;
+            text_ab.textContent = ab_en;
+            text_con.textContent = con_en;
+            text_intro.textContent = intro_en;
+            text_bye.innerHTML = bye_en;
+            text_bye2.innerHTML = bye2_en;
+            text_rules.textContent = rules_en;
+             if (mode === 'light'){
+                    lang_icon.src =  'photos/svk.png';
+                } else{
+                    lang_icon.src = 'photos/svk_white.png';
+                }
+        } else {
+            text_gal.textContent = gal_sk;
+            text_ab.textContent = ab_sk;
+            text_con.textContent = con_sk;
+            text_intro.textContent = intro_sk;
+            text_bye.innerHTML = bye_sk;
+            text_bye2.innerHTML = bye2_sk;
+            text_rules.textContent = rules_sk;
+            if (mode === 'light'){
+                    lang_icon.src =  'photos/gb.png';
+                } else{
+                    lang_icon.src = 'photos/gb_white.png';
+                }
+        }
+    }
+
+    function changeLanguage() {
+            var language = (localStorage.getItem('language') === 'en') ? 'sk' : 'en';
+            localStorage.setItem('language', language);
+            translateText();
+        }
+        checkWidth();
+
+    </script>
+</body>
+</html>
